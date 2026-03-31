@@ -183,8 +183,6 @@ History disclaimer:
 python app.py
 ```
 
-Keep the server running at `http://127.0.0.1:5000`.
-
 ### 2) Load extension in Chrome / Edge / Brave / Opera
 
 1. Open extensions page:

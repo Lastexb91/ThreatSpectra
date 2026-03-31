@@ -4,7 +4,7 @@ const MAX_HISTORY_ITEMS = 15;
 
 const DEFAULT_SETTINGS = {
   popupEnabled: true,
-  apiBaseUrl: "http://127.0.0.1:5000"
+  apiBaseUrl: "https://threat-spectra--krishyada9865.replit.app"
 };
 
 const lastScanByTab = new Map();

@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://127.0.0.1:5000";
+const API_BASE_URL = "https://threat-spectra--krishyada9865.replit.app";
 const MAX_HISTORY_ITEMS = 15;
 
 const statusText = document.getElementById("status-text");
