@@ -866,12 +866,14 @@ function showEmailResult(data) {
     const links = Number.isFinite(Number(signals.links)) ? Number(signals.links) : 0;
     const urgentKeywords = Number.isFinite(Number(signals.urgent_keywords)) ? Number(signals.urgent_keywords) : 0;
     const sensitiveRequest = signals.sensitive_request ? 'Yes' : 'No';
-    const intent = escapeHtml(String(signals.intent || (isSafe ? 'Safe' : 'Suspicious')));
+    let intentLabel = String(signals.intent || 'Safe');
 
     let verdictLabel = verdict;
     if (normalizedRisk === 'medium') {
-        verdictLabel = 'Suspicious';
+        verdictLabel = 'Safe';
+        intentLabel = 'Safe';
     }
+    const intent = escapeHtml(intentLabel);
 
     result.innerHTML = `
         <div class="result-card result-card-modern analysis-card ${statusClass}">
