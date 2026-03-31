@@ -32,7 +32,7 @@ Backend highlights:
 - Random Forest-based URL model pipeline
 - Feature-based email phishing model pipeline
 - TF-IDF based SMS phishing model pipeline
-- QR decoding with OpenCV and fallback preprocessing
+- QR decoding with zxing-cpp and pyzbar fallback, plus Pillow-based preprocessing
 - Contact endpoint with SMTP mail forwarding
 
 ## Project Structure
@@ -200,7 +200,9 @@ Latest local check status (March 29, 2026):
 - numpy
 - requests
 - BeautifulSoup
-- OpenCV (headless)
+- Pillow
+- zxing-cpp
+- pyzbar
 - HTML, CSS, JavaScript, Bootstrap, AOS
 
 ## Contribution Guide
