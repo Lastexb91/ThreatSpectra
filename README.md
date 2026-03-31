@@ -5,35 +5,34 @@
 ![License](https://img.shields.io/badge/License-Permission--First-blue)
 ![Status](https://img.shields.io/badge/Status-Production%20Ready-2ea44f)
 
-ThreatSpectra is a full-stack phishing detection website that analyzes multiple attack surfaces in one place: URLs, emails, SMS messages, and QR codes. It combines machine learning predictions with practical safety heuristics and provides a modern, interactive frontend built for real-time security checks.
+ThreatSpectra is a full-stack phishing detection platform that analyzes multiple attack surfaces in one place: URLs, emails, SMS messages, and QR codes. It combines machine learning predictions with practical rule-based checks and provides a modern frontend for fast security screening.
 
 ## Overview
 
-ThreatSpectra helps users quickly identify suspicious content before they click, reply, or share sensitive information.
+ThreatSpectra helps users identify suspicious content before they click links, respond to messages, or share sensitive data.
 
 Core capabilities:
-- URL phishing analysis
-- Email text phishing analysis
-- SMS phishing analysis
-- QR-image scanning and phishing evaluation
-- Contact form with SMTP delivery to the project owner
+- URL phishing detection
+- Email phishing detection
+- SMS phishing detection
+- QR-code URL extraction and risk detection
+- Contact form with SMTP delivery
 
-## Website Features
+## Features
 
-Frontend highlights:
+Frontend:
 - Multi-mode scanner interface (URL, Email, SMS, QR)
-- Real-time result cards with confidence scores
-- Advanced quick examples for testing inputs
-- Policy details panel in footer
+- Real-time result cards with confidence values
+- Quick sample inputs for testing
 - Responsive cybersecurity-themed UI
 
-Backend highlights:
+Backend:
 - Flask API with CORS enabled
-- Random Forest-based URL model pipeline
-- Feature-based email phishing model pipeline
-- TF-IDF based SMS phishing model pipeline
-- QR decoding with zxing-cpp and pyzbar fallback, plus Pillow-based preprocessing
-- Contact endpoint with SMTP mail forwarding
+- Random Forest-based URL detection pipeline
+- Feature-based email detection pipeline
+- TF-IDF based SMS detection pipeline
+- QR decoding with `zxing-cpp` and `pyzbar` fallback
+- Contact endpoint with SMTP forwarding
 
 ## Project Structure
 
@@ -63,6 +62,15 @@ Backend highlights:
 |  |- css/style.css
 |  |- js/script.js
 |  |- images/
+|- extension/
+|  |- manifest.json
+|  |- background.js
+|  |- content.js
+|  |- popup.html
+|  |- popup.css
+|  |- popup.js
+|  |- assets/
+|  |- dist/
 |- website_detection/
 |  |- Phishing_website_detection.ipynb
 |  |- phishing_model_complete.pkl
@@ -77,7 +85,7 @@ Backend highlights:
 ## API Endpoints
 
 ### `GET /`
-Serves the main ThreatSpectra web page.
+Serves the main ThreatSpectra webpage.
 
 ### `POST /predict`
 Analyzes URL phishing risk.
@@ -100,7 +108,7 @@ Request:
 ```
 
 ### `POST /predict/email`
-Legacy-compatible email route used by frontend.
+Legacy-compatible email route.
 
 Request:
 ```json
@@ -120,10 +128,10 @@ Request:
 ```
 
 ### `POST /predict-qr`
-Accepts QR image upload (`qr_image`) and analyzes decoded URL.
+Accepts QR image upload (`qr_image`) and analyzes the decoded URL.
 
 ### `POST /contact/send`
-Sends website contact form submissions to configured inbox.
+Sends website contact form submissions to the configured inbox.
 
 Request:
 ```json
@@ -138,7 +146,7 @@ Request:
 
 ### Prerequisites
 - Python 3.9+
-- pip
+- `pip`
 
 ### Install and Run (Windows PowerShell)
 
@@ -153,7 +161,57 @@ python app.py
 
 Open:
 - `http://127.0.0.1:5000`
-- or `http://localhost:5000`
+- `http://localhost:5000`
+
+## Browser Extension
+
+ThreatSpectra includes a browser extension in `extension/`.
+
+Capabilities:
+- Automatically scans visited websites via `POST /predict`
+- Shows top-right on-page alert: `Safe` or `Unsafe`
+- Supports manual checks in popup: URL, QR, Email, SMS
+- Includes scan history with delete and clear controls
+
+History disclaimer:
+- Only the latest 15 checks are stored
+- Older entries are deleted automatically
+
+### 1) Start API server
+
+```powershell
+python app.py
+```
+
+Keep the server running at `http://127.0.0.1:5000`.
+
+### 2) Load extension in Chrome / Edge / Brave / Opera
+
+1. Open extensions page:
+   - Chrome: `chrome://extensions`
+   - Edge: `edge://extensions`
+2. Enable `Developer mode`
+3. Click `Load unpacked`
+4. Select folder: `ThreatSpectra/extension`
+
+### 3) Load extension in Firefox
+
+1. Open `about:debugging#/runtime/this-firefox`
+2. Click `Load Temporary Add-on`
+3. Select `ThreatSpectra/extension/manifest.json`
+
+### 4) Use extension
+
+1. Click the extension icon
+2. Keep `Automatic top-right alert` ON for auto site alerts
+3. Open or refresh a website tab to trigger scanning
+4. Use popup tabs for manual URL, QR, Email, and SMS scans
+5. Manage records from the History tab
+
+If popup alerts do not appear:
+- Confirm Flask server is running
+- Test on normal `http/https` pages (not browser internal pages)
+- Refresh the tab after enabling the extension
 
 ## SMTP Configuration (Contact Form)
 
@@ -169,9 +227,9 @@ $env:CONTACT_FROM_EMAIL="your-email@gmail.com"
 $env:CONTACT_SMTP_USE_TLS="true"
 ```
 
-Then restart the Flask server.
+Restart the Flask server after updating variables.
 
-## Code Health Check (Re-run Anytime)
+## Code Health Check
 
 Use the same virtual environment and run:
 
@@ -183,13 +241,9 @@ python -m compileall -q .
 python -c "import app; print('APP_IMPORT_OK')"
 ```
 
-Expected result:
-- `compileall` returns with no errors
-- app import prints `APP_IMPORT_OK`
-
-Latest local check status (March 29, 2026):
-- `compileall`: passed
-- app import smoke test: passed
+Expected:
+- `compileall` exits with no errors
+- Import smoke test prints `APP_IMPORT_OK`
 
 ## Tech Stack
 
@@ -211,19 +265,19 @@ Contributions are welcome.
 
 How to contribute:
 1. Open an issue describing your change.
-2. Ask for permission to use/modify this project before distributing or deploying it.
+2. Request permission before using, modifying, distributing, or deploying this project.
 3. Fork the repository and create a feature branch.
 4. Submit a pull request with clear notes and test details.
 
-By contributing, you agree that your contribution can be used in this project under the repository license.
+By contributing, you agree your contributions may be used under this repository license.
 
 ## License
 
 This repository uses a custom permission-first license:
 - You must ask the owner for permission before using, distributing, or deploying this project.
-- Contributions are allowed and encouraged via pull requests.
+- Contributions are allowed via pull requests.
 
-See [LICENSE](LICENSE) for full terms.
+See [LICENSE](LICENSE) for complete terms.
 
 ## Maintainer
 
@@ -233,4 +287,4 @@ See [LICENSE](LICENSE) for full terms.
 
 ## Disclaimer
 
-ThreatSpectra provides security predictions, not legal or absolute guarantees. Always validate high-risk outcomes with additional security checks before taking action.
+ThreatSpectra provides security predictions, not absolute guarantees. Validate high-risk outcomes with additional security checks before taking action.

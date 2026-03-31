@@ -1,0 +1,51 @@
+{
+  "manifest_version": 3,
+  "name": "ThreatSpectra Site Guard",
+  "description": "Checks the current website against ThreatSpectra and shows top-right Safe/Unsafe alerts.",
+  "version": "1.0.0",
+  "permissions": [
+    "storage",
+    "tabs",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "http://127.0.0.1:5000/*",
+    "http://localhost:5000/*",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "assets/shield.jpg",
+    "32": "assets/shield.jpg",
+    "48": "assets/shield.jpg",
+    "128": "assets/shield.jpg"
+  },
+  "action": {
+    "default_icon": {
+      "16": "assets/shield.jpg",
+      "32": "assets/shield.jpg",
+      "48": "assets/shield.jpg"
+    },
+    "default_title": "ThreatSpectra",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "threatspectra@krishyadav90"
+    }
+  }
+}
